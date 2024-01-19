@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      -name: Setup .Net
-       uses: actions/setup-dotnet@v3
-       with:
+      - name: Setup .Net
+        uses: actions/setup-dotnet@v3
+        with:
          dotnet-version: '6.0.x'
          
-      -name: Restore
-       run: dotnet restore ./MediaGateway/MediaGateway.sln
+      - name: Restore
+        run: dotnet restore ./MediaGateway/MediaGateway.sln
 
-      -name: Build
-       run: dotnet build ./MediaGateway/MediaGateway.sln --configuration Release --no-restore
+      - name: Build
+        run: dotnet build ./MediaGateway/MediaGateway.sln --configuration Release --no-restore
 
-      -name: Publish
-       run: dotnet publish ./MediaGateway/MediaGateway.sln --configuration Release --no-build
+      - name: Publish
+        run: dotnet publish ./MediaGateway/MediaGateway.sln --configuration Release --no-build
