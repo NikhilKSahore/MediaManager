@@ -18,7 +18,7 @@ namespace MediaGateway.Controllers
             DocumentProcessor = documentProcessor;
         }
 
-        [HttpPost("SetMediaDocuments")]
+        [HttpPost("StoreMediaDocuments")]
         public async Task<IActionResult> SetMediaDocument([FromForm] Media media)
         {            
             await DocumentProcessor.SaveMediaDocument(media);
